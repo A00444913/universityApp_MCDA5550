@@ -1,0 +1,56 @@
+<h1>University Database App in Angular</h1>
+<form>
+
+  <div class="form-group">
+    <label for="universityName">University Name </label>
+    <input type="text" class="form-control" name="name" [(ngModel)]="name" required="required">
+  </div><br>
+
+  <div class="form-group">
+    <label for="universityAddress">University Address </label>
+    <input type="text" class="form-control" name="address" [(ngModel)]="address" required="required">
+  </div><br>
+
+  <div class="form-group">
+    <label for="universityPhoneNumber">University Phone Number </label>
+    <input type="tel" class="form-control" name="phone" [(ngModel)]="phone" required="required">
+  </div><br>
+
+  <div class="btn-toolbar">
+    <button type="submit" (click)="saveUniversity()">Save</button>
+    <br><br>
+    <button type="submit" (click)="deleteUniversity()">Delete</button>
+  </div><br><br>
+
+  <div class="form-group">
+    <label for="universitySearchName">Search:</label>
+    <input type="text" class="form-control" name="searchname" [(ngModel)]="searchname">
+  </div><br>
+  <div class="btn-toolbar">
+    <button type="submit" (click)="searchUniversity()">Search</button>
+  </div><br>
+  <div class="btn-toolbar">
+    <button type="submit" (click)="displayUniversities()">Display Records</button>
+  </div><br>
+  <div class="col-md-8 mt-4 mb-4">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listData">
+          <td><span>{{item.Name}}</span></td>
+          <td><span>{{item.Address}}</span></td>
+          <td><span>{{item.PhoneNumber}}</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+</form>
