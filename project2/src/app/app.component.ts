@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
-import { Directive, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -17,15 +16,6 @@ export class AppComponent {
   result: any;
   htmlTable: any;
   listData: any;
-  //universities: any;
-  //type universityType = Array<{name: string, address: string, phone: string}>;
-  //   days: Array<Object> = [
-  //     {today: 'Monday', msg: 'Marvelous Mondays!'},
-  // ];
-
-  // universities: Array<Object> = [
-  //   {name: '', address: '', phone: ''},
-  // ];
 
   constructor(private http: HttpClient) {
   }
@@ -77,9 +67,6 @@ export class AppComponent {
 
     this.http.post<any>("http://dev.cs.smu.ca:8116/getUniversity", { 'Name': this.searchname }).subscribe({
       next: data => {
-        // this.message = data.message;
-        // console.log(this.message);
-        // alert(this.message);
         var university = data
 
         if (university == null || university.length == 0) {
